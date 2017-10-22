@@ -1,0 +1,29 @@
+
+$primary-font: Lato, Helvetica, sans-serif;
+$secondary-font: sans-serif;
+
+$breakpoint: 40em;
+$module-width: 50em;
+
+$primary-color: #3F51B5;
+$primary-color-light: lighten($primary-color, 10%);
+$primary-color-dark: darken($primary-color, 10%);
+
+$accent-color: #E91E63;
+$accent-color-light: lighten($accent-color, 10%);
+$accent-color-dark: darken($accent-color, 10%);
+
+$text-color: #212121;
+$text-color-light: #555;
+
+$foreground-color: #FFF;
+$background-color: #FAFAFA;
+
+$success-color: green;
+$error-color: red;
+$pending-color: gray;
+
+
+@mixin borderRadius {
+  border-radius: 2px;
+}

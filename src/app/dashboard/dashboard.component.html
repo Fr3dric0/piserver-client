@@ -1,0 +1,25 @@
+
+<section>
+    <h1>Home</h1>
+    <p class="introduction">
+
+    </p>
+</section>
+
+<section>
+    <h2>Movies</h2>
+    <ul class="horizontal">
+        <li *ngFor="let m of movies">
+            <app-media-card
+                    [thumbnail]="m.thumbnail"
+                    [url]="'/media/'+m.id"></app-media-card>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Tv-show</h2>
+    <ul class="horizontal">
+
+    </ul>
+</section>

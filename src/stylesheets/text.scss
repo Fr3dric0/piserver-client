@@ -1,0 +1,40 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #555;
+
+  margin: 0;
+
+  &.light {
+    color: $background-color;
+  }
+}
+
+a {
+  color: $accent-color;
+
+  padding: .5em;
+
+  text-decoration: none;
+}
+
+small {
+
+  &.light {
+    color: $background-color;
+  }
+}
+
+
+.description {
+
+  font-weight: 100;
+
+  margin: 1em;
+  max-width: $module-width;
+}
+

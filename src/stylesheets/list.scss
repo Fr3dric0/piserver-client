@@ -1,0 +1,16 @@
+
+
+ul.horizontal,
+ol.horizontal {
+  display: flex;
+
+  flex-wrap: nowrap;
+
+  justify-content: flex-start;
+
+  list-style-type: none;
+
+  > *~* {
+    margin-left: 1em;
+  }
+}

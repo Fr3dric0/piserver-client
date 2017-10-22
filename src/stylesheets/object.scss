@@ -1,0 +1,98 @@
+
+.card {
+  @include shadow(1, true);
+
+  background-color: $foreground-color;
+  box-sizing: border-box;
+
+  display: block;
+
+  height: 10em;
+
+  overflow: hidden;
+
+  position: relative;
+
+  width: 8em;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.img {
+    padding: 0;
+  }
+
+  > img {
+    width: 100%;
+  }
+}
+
+.card.media {
+  @include shadow(1, false);
+
+  display: grid;
+
+  grid-template-columns: 7em 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "image title"
+    "image type";
+
+  grid-gap: .5em;
+
+  height: 10em;
+
+  margin: auto;
+  max-width: $module-width;
+
+  width: auto;
+
+  > picture {
+    display: block;
+
+    grid-area: image;
+
+    height: auto;
+
+    position: relative;
+
+    > img {
+      height: 100%;
+    }
+  }
+
+  > h1 {
+    font-size: 2em;
+  }
+
+}
+
+.category {
+  @include shadow(1, true);
+  @include borderRadius;
+
+  align-items: center;
+
+  background-color: $primary-color;
+
+  color: #FFF;
+  cursor: default;
+
+  display: flex;
+
+  font-style: normal;
+
+  justify-content: center;
+
+  height: 2em;
+
+  text-align: center;
+  text-decoration: none;
+
+  width: 4.5em;
+
+  &:nth-child(even) {
+    background-color: $primary-color-light;
+  }
+}
