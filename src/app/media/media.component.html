@@ -6,8 +6,12 @@
     <section>
         <h2>All {{title}}</h2>
 
-        <ul class="grid">
-
+        <ul class="grid" *ngIf="media">
+            <li *ngFor="let m of media">
+                <app-media-card
+                        [thumbnail]="m.thumbnail"
+                        [url]="'/media'+m.id"></app-media-card>
+            </li>
         </ul>
     </section>
 </article>

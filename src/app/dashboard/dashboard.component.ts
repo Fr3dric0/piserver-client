@@ -16,6 +16,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.movies = this.mediaService.list('movie');
+    this.mediaService.list()
+      .then(data => this.movies = data.filter(m => m.type === 'movie'))
+      .catch(err => console.log(err));
   }
 }

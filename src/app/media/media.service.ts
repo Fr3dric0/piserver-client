@@ -1,25 +1,22 @@
 import { Injectable } from '@angular/core';
 import Media from './media';
-
-const movies = [
-  new Media(1, 'Batman v. Superman', null, 'movie', '/assets/batman_v_superman.jpg'),
-  new Media(2, 'The Dark Knight', null, 'movie', '/assets/the_dark_knight.jpeg'),
-  new Media(3, 'The Dark Knight Rises', null, 'movie', '/assets/the_dark_knight_rises.jpg')
-];
+import { Http } from '@angular/http';
 
 @Injectable()
 export class MediaService {
 
-  list(type = null): Media[] {
-
-    if (type === 'movie') {
-      return movies;
-    } else {
-      return null;
-    }
+  constructor(private http: Http) {
   }
 
-  retrieve(id: number): Media {
-    return movies[id - 1];
+  list(type = null): Promise<Media[]> {
+    return this.http.get(`/api/v1/media/${type ? '?type=' + type : ''}`)
+      .toPromise()
+      .then(res => res.json() as Media[]);
+  }
+
+  retrieve(id: number): Promise<Media> {
+    return this.http.get(`/api/v1/media/${id}/`)
+      .toPromise()
+      .then(res => res.json() as Media);
   }
 }

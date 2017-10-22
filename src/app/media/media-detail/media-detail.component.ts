@@ -23,11 +23,10 @@ export class MediaDetailComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
 
-      this.media = this.mediaService.retrieve(this.id);
+      this.mediaService.retrieve(this.id)
+        .then(data => this.media = data)
+        .catch(err => console.log(err));
 
-      if (this.media) {
-        this.media.url = '/assets/batman_v_superman.mp4';
-      }
     });
   }
 
