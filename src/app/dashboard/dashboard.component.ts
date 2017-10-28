@@ -10,14 +10,19 @@ import Media from '../media/media';
 export class DashboardComponent implements OnInit {
   title = 'app';
   movies: Media[] = [];
+  tvShow: Media[] = [];
 
   constructor(private mediaService: MediaService) {
 
   }
 
   ngOnInit() {
-    this.mediaService.list()
-      .then(data => this.movies = data.filter(m => m.type === 'movie'))
+    this.mediaService.list('movie')
+      .then(data => this.movies = data)
+      .catch(err => console.log(err));
+
+    this.mediaService.list('tv-show')
+      .then(data => this.tvShow = data)
       .catch(err => console.log(err));
   }
 }

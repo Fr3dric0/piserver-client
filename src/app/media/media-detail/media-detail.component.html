@@ -1,20 +1,19 @@
-    <section *ngIf="!media">
-        <strong class="loading" style="text-align: center; margin:auto;">Loading media...</strong>
+<section *ngIf="!media">
+    <strong class="loading" style="text-align: center; margin:auto;">Loading media...</strong>
+</section>
+
+<article *ngIf="media">
+    <section class="card media">
+        <picture *ngIf="media.thumbnail">
+            <source [srcset]="media.thumbnail">
+            <img [src]="media.thumbnail" [alt]="media.title">
+        </picture>
+        <h1>{{media.title}}{{media.subtitle ? ' - ' + media.subtitle : ''}}</h1>
+        <em class="category">{{media.type}}</em>
     </section>
 
-    <article *ngIf="media">
-
-        <section class="card media">
-            <picture *ngIf="media.thumbnail">
-                <source [srcset]="media.thumbnail">
-                <img [src]="media.thumbnail" [alt]="media.title">
-            </picture>
-            <h1>{{media.title}}</h1>
-            <em class="category">{{media.type}}</em>
-        </section>
-
-        <video *ngIf="media.type == 'movie'" width="320" height="240" controls [poster]="media.cover || media.thumbnail">
-            <source [src]="media.url" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </article>
+    <video *ngIf="media.type == 'movie'" width="320" height="240" controls [poster]="media.cover || media.thumbnail">
+        <source [src]="media.url" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</article>

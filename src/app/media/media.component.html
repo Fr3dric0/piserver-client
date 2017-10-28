@@ -9,7 +9,7 @@
         <ul class="grid" *ngIf="media">
             <li *ngFor="let m of media">
                 <app-media-card
-                        [thumbnail]="m.thumbnail"
+                        [media]="m"
                         [url]="'/media'+m.id"></app-media-card>
             </li>
         </ul>

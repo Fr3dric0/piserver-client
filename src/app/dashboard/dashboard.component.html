@@ -10,16 +10,18 @@
     <h2>Movies</h2>
     <ul class="grid">
         <li *ngFor="let m of movies">
-            <app-media-card
-                    [thumbnail]="m.thumbnail"
-                    [url]="'/media/'+m.id"></app-media-card>
+            <app-media-card [media]="m"
+                    [url]="'/media/' + m.id"></app-media-card>
         </li>
     </ul>
 </section>
 
 <section>
     <h2>Tv-show</h2>
-    <ul class="horizontal">
-
+    <ul class="grid">
+        <li *ngFor="let t of tvShow">
+            <app-media-card [media]="t"
+                    [url]="'/media/' + t.id"></app-media-card>
+        </li>
     </ul>
 </section>

@@ -9,7 +9,7 @@ export class MediaService {
   }
 
   list(type = null): Promise<Media[]> {
-    return this.http.get(`/api/v1/media/${type ? '?type=' + type : ''}`)
+    return this.http.get(`/api/v1/media/${type ? `?type=${type}` : ''}`)
       .toPromise()
       .then(res => res.json() as Media[]);
   }
