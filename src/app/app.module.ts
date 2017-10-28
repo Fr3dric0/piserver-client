@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { MediaModule } from './media/media.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MediaModule } from './media/media.module';
     AppRoutingModule,
 
     DashboardModule,
-    MediaModule
+    MediaModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

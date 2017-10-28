@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-
 import { MediaService } from '../media.service';
 import { ActivatedRoute } from '@angular/router';
 import Media from '../media';

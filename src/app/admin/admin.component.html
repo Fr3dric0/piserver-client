@@ -1,0 +1,49 @@
+<section>
+    <h1>Admin</h1>
+    <p class="introdution">Admin existing media, and create new ones from this page</p>
+</section>
+
+<section>
+    <h2>Create Media</h2>
+    <p class="introduction">
+        Fill out the form to create the media.
+        Videos and thumbnails can be added from the modification menu, after creation.
+    </p>
+
+
+</section>
+
+<section>
+    <h2>Manage Media</h2>
+
+    <table *ngIf="media" class="media">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Thumbnail</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let m of media">
+            <td class="name">
+                <a [routerLink]="'/media/' + m.id">{{m.title}}</a>
+            </td>
+            <td class="thumbnail">
+                <img *ngIf="m.thumbnail"
+                     [src]="m.thumbnail"
+                     [alt]="m.title"
+                     style="width: 4em;"
+                >
+            </td>
+            <td class="type">{{m.type}}</td>
+            <td class="actions">
+                <a [routerLink]="'/admin/' + m.id" class="button">Edit</a>
+                <button class="dangerous">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+

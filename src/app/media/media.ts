@@ -5,6 +5,8 @@ export default class Media {
   subtitle?: string;
   type: string;
   thumbnail?: string;
+  rating?: number;
+  description?: string;
   cover?: string;
   url?: string;
   seasons?: any;
