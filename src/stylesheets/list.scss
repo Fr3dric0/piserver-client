@@ -18,7 +18,7 @@ ol.horizontal {
   display: grid;
 
   grid-auto-rows: 10em;
-  grid-gap: .5em;
+  grid-gap: 1em;
   grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(10em, 1fr));
 
@@ -27,13 +27,15 @@ ol.horizontal {
   list-style-type: none;
 
   > li {
-    height: auto;
+    height: unset;
 
-    width: auto;
+    width: unset;
 
     .card {
       width: unset;
       height: unset;
+
+      overflow: hidden;
     }
   }
 }
